@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void maxelement(int arr[], int index, int n, int& max_val) {
+    //int& max_val agr yha pass by refrence nhi kiye to max_val ke ndar jo store hoga wo function ke sath khtm hojayega
+    // base case
+    if (index >= n) {
+        return; 
+    }
+   
+    // 1 case to solve
+    if (arr[index] > max_val) {
+        max_val = arr[index];
+    }
+    
+    // recursive call
+    maxelement(arr, index + 1, n, max_val);
+}
+
+int main() {
+    int arr[5] = {2, 4, 32, 35, 5};
+    int n = 5;
+    int index = 0;
+    int max_val = INT_MIN;
+    
+    // Call the maxelement function
+    maxelement(arr, index, n, max_val);
+    
+    // Print the result
+    cout << "The maximum element is: " << max_val << endl;
+    
+    return 0;
+}
