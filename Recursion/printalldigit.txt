@@ -1,0 +1,48 @@
+
+//to print 3 7 6 4
+#include <bits/stdc++.h>
+using namespace std;
+void printalldigit(int n,vector<int>& arr) {
+    if(n<=0){
+        return;
+    }
+    arr.push_back(n%10);
+    
+    printalldigit(n/10,arr);
+        
+}
+    
+
+int main() {
+    int n=4673;
+    vector<int>ans;
+    printalldigit(n,ans);
+    for(auto val:ans){
+        cout<<val<<endl;
+    }
+}
+
+//to print 4 6 7 3
+
+#include <bits/stdc++.h>
+using namespace std;
+void printalldigit(int n,vector<int>& arr) {
+    if(n<=0){
+        return;
+    }
+     printalldigit(n/10,arr);
+    arr.push_back(n%10);
+    
+   
+        
+}
+    
+
+int main() {
+    int n=4673;
+    vector<int>ans;
+    printalldigit(n,ans);
+    for(auto val:ans){
+        cout<<val<<endl;
+    }
+}
