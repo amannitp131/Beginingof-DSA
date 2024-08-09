@@ -29,7 +29,7 @@ int main(){
     
     
 
-    middleofstack(s,7);
+    middleofstack(s,7); // to find middle
     
 
 }
