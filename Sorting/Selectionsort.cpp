@@ -21,7 +21,7 @@ int main(){
             
         }
         for(int k=0;k<n;k++){  
-        cout<<arr[k]<<endl;
+        cout<<arr[k]<<" ";
     }
 
     

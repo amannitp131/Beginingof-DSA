@@ -88,64 +88,31 @@ void insertatposition(Node*& head, Node*& tail, int data,int position){
         prev->Next=newNode;
     }
 
-void deleteoperation(int position, Node*& head, Node*& tail) {
-    if (head == NULL) {
-        cout << "Cannot delete. Linked list is empty." << endl;
-        return;
+   int middle_pos(Node* &head){
+    if(head==NULL){
+        
+        return 0 ;
     }
-
-    // Deleting the first node
-    if (position == 1) {
-        Node* temp = head;
-        head = head->Next;
-        delete temp;
-
-        // If the list becomes empty, update tail as well
-        if (head == NULL) {
-            tail = NULL;
+    if(head->Next==NULL){
+        return head->data;
+    }
+      Node* fast = head;
+      Node* slow = head;
+      while(fast!=NULL){
+        fast=fast->Next;
+        if(fast!=NULL){
+          fast=fast->Next;
+          slow= slow->Next;
         }
+        
+        
 
-        return;
-    }
+      }
+      return slow->data;
+   }
 
-    // Deleting a node at a specific position
-    Node* current = head;
-    Node* previous = NULL;
 
-    int currentPosition = 1;
-    while (current != NULL && currentPosition < position) {
-        previous = current;
-        current = current->Next;
-        currentPosition++;
-    }
 
-    // If the position is greater than the number of nodes
-    if (current == NULL) {
-        cout << "Position out of bounds." << endl;
-        return;
-    }
-
-    // If deleting the last node
-    if (current->Next == NULL) {
-        tail = previous;
-    }
-
-    previous->Next = current->Next;
-    delete current;
-}
-
-Node* reverselikedlist(Node*& prev,Node*& curr){
-    //base case
-    if(curr==NULL){
-        // head prevpe hoga
-        return prev;
-    }
-    //1 case solve
-  Node* next= curr->Next;
-  curr->Next=prev;
-
-  return reverselikedlist(curr,next);
-}
 
 
 
@@ -158,13 +125,18 @@ int main() {
     insertAtHead(head, tail, 30); // List: 30 -> 20 -> 10
     insertAtHead(head, tail, 40); // List: 40 -> 30 -> 20 -> 10
     insertAtTail(head, tail, 5);  // List: 40 -> 30 -> 20 -> 10 -> 5
+    insertAtHead(head, tail, 7);
 
-    insertatposition(head,tail,69,5);
-    
-    Node* prev =NULL;
-    Node* curr= head;
-    head= reverselikedlist(prev,curr);
-    print(head); 
+    print(head);
+    cout<<endl;
+
+    /////////////////////////////////////
+    //// TO find mid element
+    /////////////////////////////////////
+cout<<middle_pos(head);
+
+
+   
 
     return 0;
 }
