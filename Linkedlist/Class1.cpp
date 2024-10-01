@@ -55,8 +55,8 @@ int findlenth(Node* head){
 
 void insertatposition(Node*& head, Node*& tail, int data,int position){
     if(head == NULL){
-     Node* newNode = new Node(data);
-     head = newNode; 
+    Node* newNode = new Node(data);
+    head = newNode; 
     tail = newNode;
     return;
     }
