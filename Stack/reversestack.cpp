@@ -2,7 +2,7 @@
 #include <stack>
 using namespace std;
 
-void solve(stack<int> &s,int target){
+void insert_at_bottom(stack<int> &s,int target){
     //Base case
     if(s.empty()){
         s.push(target);
@@ -11,7 +11,7 @@ void solve(stack<int> &s,int target){
     int temp=s.top();
     s.pop();
     //recursive call
-    solve(s,target);
+    insert_at_bottom(s,target);
     //backtrack
     s.push(temp);
 
@@ -28,7 +28,7 @@ void reverse(stack<int> &s){
     //reverse stack
     reverse(s);
     //insert at bottom target ko
-    solve(s,target);
+    insert_at_bottom(s,target);
 
     
 }
