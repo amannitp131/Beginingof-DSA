@@ -1,0 +1,5 @@
+see the constarint if it is small go for brute force
+
+Try to reduce 2d problem to 1 d problem if u can do so
+example : https://leetcode.com/problems/minimum-swaps-to-arrange-a-binary-grid/description/
+
